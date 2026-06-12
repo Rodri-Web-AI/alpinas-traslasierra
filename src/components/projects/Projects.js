@@ -382,9 +382,12 @@ export default function Projects() {
               Elegí el modelo que se adapta a tu proyecto
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
-              Todos personalizables. Construcción llave en mano. 
-              Pagos por avance certificado.
-            </p>
+  Todos personalizables. Construcción llave en mano. 
+  Pagos por avance certificado.{" "}
+  <span className="inline-block mt-2 rounded-lg bg-[#c5a073]/10 border border-[#c5a073]/30 px-3 py-1 text-sm font-bold text-[#c5a073]">
+    Desde USD 600/m²
+  </span>
+</p>
           </header>
 
           <div className="mt-14 columns-1 gap-6 sm:mt-16 sm:columns-2 lg:columns-2 xl:columns-2">

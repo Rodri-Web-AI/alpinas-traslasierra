@@ -555,7 +555,7 @@ export default function WhyChooseUs() {
             </h2>
 
             <p className="mt-5 text-base leading-relaxed text-zinc-600 sm:text-lg">
-            Construimos alpinas y cabañas en Traslasierra desde [año]. Cada obra tiene precio cerrado por contrato, 
+            Construimos alpinas y cabañas en Traslasierra. Cada obra tiene precio cerrado por contrato, 
             cronograma por escrito y un responsable directo que te manda fotos todos los viernes. Sin sorpresas, 
             sin letra chica.
             </p>
