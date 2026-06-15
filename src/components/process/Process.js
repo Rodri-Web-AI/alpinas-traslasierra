@@ -101,8 +101,8 @@ const STEPS = [
     number: "05",
     title: "La Entrega",
     description:
-      "Recibís tu cabaña terminada, probada y lista para habitar y te entregamos la garantía escrita de 5 años por vicios ocultos.",
-    highlight: "Garantía escrita de 5 años.",
+      "Recibís tu cabaña terminada, probada y lista para habitar y te entregamos la garantía escrita de 2 años por vicios ocultos.",
+    highlight: "Garantía escrita de 2 años.",
     icon: CheckCircleIcon,
     image: {
       src: "/images/proceso/Entrega.png",
