@@ -7,7 +7,11 @@ const MODELS = [
   {
     name: "Refugio 25m²",
     size: "25 m²",
-    price: "USD 15.000",
+    price: [
+      "Inversión total: $21.900.000",
+      "Anticipo (40%): $8.760.000",
+      "12 cuotas: $1.095.000/mes",
+    ],
     bedrooms: 1,
     bathrooms: 1,
     category: "Escapadas / Inversión inicial",
@@ -34,7 +38,13 @@ const MODELS = [
     name: "Alpina 40 m² Estándar",
     recommended: true,
     size: "40 m²",
-    price: "USD 24.000",
+    price: [
+      "~~Inversión total: $35.040.000~~",
+      "🎉 Precio especial: $31.536.000",
+      "(Ahorrás $3.504.000 - 10% de descuento)",
+      "Anticipo (40%): $12.614.400",
+      "12 cuotas: $1.576.800/mes",
+    ],
     bedrooms: 2,
     bathrooms: 1,
     category: "Parejas / Alquiler turístico",
@@ -60,7 +70,12 @@ const MODELS = [
   {
     name: "Alpina 40m² Familiar",
     size: "40 m²",
-    price: "USD 24.000",
+    price: [
+      "Inversión total: $35.040.000",
+      "(Ahorrás $3.504.000 - 10% de descuento)",
+      "Anticipo (40%): $14.016.00",
+      "12 cuotas: $1.752.000/mes",
+    ],
     bedrooms: 2,
     bathrooms: 1,
     category: "Familias / Vivienda permanente",
@@ -81,7 +96,11 @@ const MODELS = [
   {
     name: "Alpina Premium con Loft",
     size: "35 m²",
-    price: "USD 21.000",
+    price: [
+      "Inversión total: $30.660.000",
+      "Anticipo (40%): $12.264.000",
+      "12 cuotas: $1.533.000/mes",
+    ],
     bedrooms: 2,
     bathrooms: 2,
     category: "Premium / Alta rentabilidad",
@@ -105,6 +124,7 @@ const MODELS = [
     ],
   },
 ];
+
 // Modal para mostrar los planos
 function FloorPlansModal({ model, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -237,6 +257,59 @@ function FloorPlansModal({ model, onClose }) {
   );
 }
 
+// Componente para renderizar el precio (soporta array o string)
+// Componente para renderizar el precio (soporta array o string)
+function PriceBlock({ price }) {
+  if (!price) return null;
+
+  // Si es un string simple, lo muestra como estaba
+  if (typeof price === "string") {
+    return (
+      <div className="mt-2">
+        <span className="text-xl font-bold text-[#c5a073]">{price}</span>
+      </div>
+    );
+  }
+
+  // Si es un array, lo renderiza línea por línea
+  return (
+    <div className="mt-3 rounded-lg border border-[#c5a073]/20 bg-[#c5a073]/5 p-3">
+      {price.map((line, i) => {
+        // Detectar si el texto tiene ~~ (tachado)
+        const isStrikethrough = line.includes("~~");
+        const cleanText = line.replace(/~~/g, "");
+        
+        // Detectar si es el precio especial
+        const isSpecialPrice = line.toLowerCase().includes("precio especial");
+        
+        return (
+          <div
+            key={i}
+            className={`flex items-center gap-2 ${
+              i === 0 ? "mb-2 pb-2 border-b border-[#c5a073]/20" : ""
+            }`}
+          >
+            {i > 0 && !isSpecialPrice && (
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c5a073]" />
+            )}
+            <span
+              className={
+                isStrikethrough
+                  ? "text-sm text-zinc-400 line-through decoration-2 decoration-red-400/60"
+                  : isSpecialPrice
+                  ? "text-lg font-bold text-emerald-700"
+                  : "text-sm text-zinc-700"
+              }
+            >
+              {cleanText}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function ModelCard({ model, visible, index, onViewPlans }) {
   const hasPlans = model.floorPlans && model.floorPlans.length > 0;
 
@@ -249,11 +322,11 @@ function ModelCard({ model, visible, index, onViewPlans }) {
     >
       <div className="group relative overflow-hidden rounded-2xl bg-white shadow-sm border border-zinc-200/50">
         {/* Badge recomendado */}
-  {model.recommended && (
-    <span className="absolute left-1/2 top-4 z-20 -translate-x-1/2 rounded-full bg-[#c5a073] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md sm:text-xs">
-      Modelo más recomendado
-    </span>
-  )}
+        {model.recommended && (
+          <span className="absolute left-1/2 top-4 z-20 -translate-x-1/2 rounded-full bg-[#c5a073] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md sm:text-xs">
+            Modelo más recomendado
+          </span>
+        )}
 
         {/* Badge de categoría */}
         <span className="absolute left-4 top-4 z-10 rounded-full border border-white/20 bg-black/35 px-3 py-1 text-[11px] font-medium tracking-wide text-white/95 backdrop-blur-sm sm:text-xs">
@@ -264,11 +337,6 @@ function ModelCard({ model, visible, index, onViewPlans }) {
         <span className="absolute right-4 top-4 z-10 rounded-full bg-[#c5a073] px-3 py-1 text-xs font-bold text-white shadow-sm">
           {model.size}
         </span>
-
-      {/* Badge de precio */}
-<span className="absolute bottom-4 right-4 z-10 rounded-lg bg-emerald-800/95 px-3 py-1.5 text-xs font-bold text-white shadow-lg backdrop-blur-sm">
-  {model.price}
-</span>
 
         {/* Imagen */}
         <div className="relative aspect-[4/3] overflow-hidden">
@@ -288,9 +356,30 @@ function ModelCard({ model, visible, index, onViewPlans }) {
             {model.name}
           </h3>
 
-          <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-            {model.description}
-          </p>
+          {/* Precio entre el nombre y la descripción */}
+<PriceBlock price={model.price} />
+
+{/* Mecanismo de cobro */}
+<div className="mt-3 rounded-lg bg-blue-50 border border-blue-200 p-3">
+  <div className="flex items-center gap-2 mb-2">
+    <svg className="h-4 w-4 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span className="text-sm font-semibold text-blue-900">
+      ¿Cómo funcionan los pagos?
+    </span>
+  </div>
+  <ul className="text-xs text-blue-800 space-y-1">
+    <li>• Precio total en USD (protege tu inversión)</li>
+    <li>• Pagos en pesos al dólar blue del día</li>
+    <li>• Cuotas fijas en USD, convertibles a pesos</li>
+    <li>• Sin sorpresas: el precio que acordás es el final</li>
+  </ul>
+</div>
+
+<p className="mt-3 text-sm leading-relaxed text-zinc-600">
+  {model.description}
+</p>
 
           {/* Especificaciones técnicas */}
           <div className="mt-4 flex items-center gap-4 text-sm">
@@ -382,16 +471,15 @@ export default function Projects() {
               Elegí el modelo que se adapta a tu proyecto
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
-  Todos personalizables. Construcción llave en mano. 
-  Pagos por avance certificado.{" "}
-  <span className="inline-block mt-2 rounded-lg bg-[#c5a073]/10 border border-[#c5a073]/30 px-3 py-1 text-sm font-bold text-[#c5a073]">
-    Desde USD 600/m²
-  </span>
-</p>
+              Todos personalizables. Construcción llave en mano. 
+              Pagos por avance certificado.{" "}
+              <span className="inline-block mt-2 rounded-lg bg-[#c5a073]/10 border border-[#c5a073]/30 px-3 py-1 text-sm font-bold text-[#c5a073]">
+                Desde USD 600/m² · Financiación propia: 40% anticipo + 12 cuotas sin interés
+              </span>
+            </p>
           </header>
 
           <div className="mt-14 columns-1 gap-6 sm:mt-16 sm:columns-2 lg:columns-2 xl:columns-2">
-            
             {MODELS.map((model, i) => (
               <ModelCard
                 key={model.name}
