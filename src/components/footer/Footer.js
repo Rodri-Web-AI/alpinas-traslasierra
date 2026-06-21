@@ -4,7 +4,7 @@ const NAV_LINKS = [
   { href: "#inicio", label: "Inicio" },
   { href: "#proceso", label: "El Proceso" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "#quienes-somos", label: "Quiénes Somos" }, /* <--- Apunta exactamente al ID de arriba */
+  { href: "#quienes-somos", label: "Precio" }, /* <--- Apunta exactamente al ID de arriba */
 ];
 
 export default function Footer() {
