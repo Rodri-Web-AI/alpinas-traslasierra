@@ -295,16 +295,7 @@ const CONSTRUCTION_SYSTEMS = [
           "termofusión",
         ],
       },
-  
-      {
-        category: "Modelos disponibles",
-        items: [
-          "32m² · 1 dormitorio",
-          "48m² · 2 dormitorios",
-          "64m² · 3 dormitorios",
-        ],
-      },
-  
+    
       {
         category: "Forma de trabajo",
         items: [
@@ -372,15 +363,6 @@ const CONSTRUCTION_SYSTEMS = [
           "gas",
           "termotanque",
           "termofusión",
-        ],
-      },
-  
-      {
-        category: "Modelos disponibles",
-        items: [
-          "32m² · 1 dormitorio",
-          "48m² · 2 dormitorios",
-          "64m² · 3 dormitorios",
         ],
       },
   
@@ -454,16 +436,7 @@ const CONSTRUCTION_SYSTEMS = [
           "termofusión",
         ],
       },
-  
-      {
-        category: "Modelos disponibles",
-        items: [
-          "32m² · 1 dormitorio",
-          "48m² · 2 dormitorios",
-          "64m² · 3 dormitorios",
-        ],
-      },
-  
+        
       {
         category: "Forma de trabajo",
         items: [

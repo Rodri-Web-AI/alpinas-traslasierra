@@ -188,15 +188,11 @@ export default function Hero() {
               className="mt-10 flex animate-fade-in-up flex-col gap-3 sm:flex-row sm:items-center"
               style={{ animationDelay: "0.55s" }}
             >
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-emerald-800 px-7 py-3.5 text-sm font-medium text-white shadow-md shadow-emerald-800/10 transition-all hover:bg-emerald-900 hover:scale-[1.01]"
-              >
-                <WhatsAppIcon className="h-4 w-4" />
-                Hablar por WhatsApp
-              </a>
+              <NavLink
+  href="#calculadora"
+  label="Calcular mi presupuesto gratis"
+  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-emerald-800 px-7 py-3.5 text-sm font-medium text-white shadow-md shadow-emerald-800/10 transition-all hover:bg-emerald-900 hover:scale-[1.01]"
+/>
               <NavLink
                 href="#proyectos"
                 label="Ver proyectos"

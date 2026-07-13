@@ -8,6 +8,8 @@ import EnObra from "@/components/en-obra/EnObra";
 import QuienesSomos from "@/components/quienes-somos/QuienesSomos";
 import Cta from "@/components/cta/Cta";
 import Footer from "@/components/footer/Footer";
+import BudgetCalculator from "@/components/BudgetCalculator";
+
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
       <ObrasReales />
       <Projects />
       {/* <EnObra /> */}
+      <BudgetCalculator /> {/* ← Agregalo acá */}
       <QuienesSomos />
       <Cta />
       <Footer />
