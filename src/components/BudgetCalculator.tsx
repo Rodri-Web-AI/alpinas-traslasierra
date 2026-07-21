@@ -198,8 +198,6 @@ export default function BudgetCalculator() {
     message += `📐 Metros cuadrados: ${formData.metros} m²%0A`;
     message += `✨ Calidad: ${calidadOption?.label}%0A`;
     message += `📍 Localidad: ${formData.localidad || "No especificada"}%0A`;
-    message += `💰 Presupuesto estimado: $${priceRangeARS.min.toLocaleString("es-AR")} - $${priceRangeARS.max.toLocaleString("es-AR")} ARS%0A`;
-    message += `(USD ${priceRange.min.toLocaleString("es-AR")} - ${priceRange.max.toLocaleString("es-AR")})%0A`;
     message += `💵 Anticipo (40%): $${anticipoARS.min.toLocaleString("es-AR")} - $${anticipoARS.max.toLocaleString("es-AR")} ARS%0A`;
     message += `📅 12 cuotas: $${cuotaARS.min.toLocaleString("es-AR")} - $${cuotaARS.max.toLocaleString("es-AR")} ARS/mes%0A`;
     message += `📱 WhatsApp: ${fullPhone}%0A`;
@@ -566,25 +564,7 @@ export default function BudgetCalculator() {
             <div className="text-center">
               <h3 className="text-xl font-bold sm:text-2xl">📊 Tu presupuesto estimado:</h3>
               
-              {/* Precio total en PESOS grande */}
-              <div className="my-6">
-                <div className="text-4xl font-extrabold sm:text-5xl">
-                  ${priceRangeARS.min.toLocaleString("es-AR")} - ${priceRangeARS.max.toLocaleString("es-AR")}
-                </div>
-                <div className="mt-1 text-sm font-medium text-white/90">
-                  pesos argentinos
-                </div>
-              </div>
-
-              {/* Precio en USD pequeño */}
-              <div className="mb-6 rounded-lg bg-white/10 px-4 py-2 inline-block">
-                <div className="text-lg font-semibold">
-                  USD {priceRange.min.toLocaleString("es-AR")} - {priceRange.max.toLocaleString("es-AR")}
-                </div>
-                <div className="text-xs text-white/80">
-                  dólares estadounidenses
-                </div>
-              </div>
+              
 
               {/* NUEVO: Anticipo y cuotas destacados */}
               <div className="mt-6 grid gap-3 sm:grid-cols-2">

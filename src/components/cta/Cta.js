@@ -6,7 +6,7 @@ const WHATSAPP_URL = "https://wa.me/5493544681747";
 
 const CTA_CONTENT = {
   badge: "EMPEZÁ AHORA",
-  titleBefore: "En la primera conversación analizamos tu terreno, te damos un presupuesto estimado y te coordinamos una visita a una obra terminada. ",
+  titleBefore: "En la primera conversación te coordinamos una visita a una obra terminada. ",
   titleHighlight: "Sin compromiso.",
   subtitle:
     "Escribinos y en 24 horas hábiles (en días laborales) tenés una respuesta.",

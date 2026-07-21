@@ -19,7 +19,7 @@ export default function Footer() {
               Alpinas Traslasierra
             </p>
             <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-              Construcción artesanal de cabañas y estructuras de diseño adaptadas a la topografía, el clima y las necesidades del Valle de Traslasierra. Edificaciones pieza a pieza.
+              Construcción artesanal de cabañas alpinas en el Valle de Traslasierra.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
               Compromiso
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-zinc-600">
-              Trabajamos bajo contratos claros, presupuestos transparentes sin letra chica y pagos escalonados por avance de obra certificado. Tu tranquilidad es nuestra prioridad.
+              Trabajamos bajo contratos claros y pagos escalonados por avance de obra. Tu tranquilidad es nuestra prioridad.
             </p>
           </div>
 

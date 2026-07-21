@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
-import { Resend } from 'resend'; 
+import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -48,7 +48,13 @@ export async function POST(request: Request) {
       throw error;
     }
 
-    // 2. Enviar email de bienvenida al cliente
+    // Cálculos para el email (Anticipo 40% y Cuotas 60% / 12)
+    const anticipoMin = Math.round(presupuestoMinARS * 0.4);
+    const anticipoMax = Math.round(presupuestoMaxARS * 0.4);
+    const cuotaMin = Math.round((presupuestoMinARS * 0.6) / 12);
+    const cuotaMax = Math.round((presupuestoMaxARS * 0.6) / 12);
+
+    // 2. Enviar email de bienvenida al cliente (Mismo mensaje, solo cambia el bloque de precios)
     await resend.emails.send({
       from: 'Alpinas Traslasierra <onboarding@resend.dev>',
       to: [email],
@@ -59,15 +65,26 @@ export async function POST(request: Request) {
           
           <p>Gracias por usar nuestra calculadora de presupuesto. Recibimos tu consulta para construir una cabaña de <strong>${metros} m²</strong> en <strong>${localidad}</strong>.</p>
           
+          <!-- BLOQUE MODIFICADO: Solo muestra Anticipo y Cuotas -->
           <div style="background: #f0f0f0; padding: 20px; border-radius: 10px; margin: 20px 0;">
-            <h3 style="color: #2d3748; margin-top: 0;">📊 Tu presupuesto estimado:</h3>
-            <p style="font-size: 24px; font-weight: bold; color: #c5a073; margin: 10px 0;">
-              $${presupuestoMinARS.toLocaleString('es-AR')} - $${presupuestoMaxARS.toLocaleString('es-AR')} ARS
-            </p>
-            <p style="color: #718096; font-size: 14px;">
-              (USD ${presupuestoMinUSD.toLocaleString()} - ${presupuestoMaxUSD.toLocaleString()})
-            </p>
+            <h3 style="color: #2d3748; margin-top: 0; text-align: center;">📊 Tu plan de financiamiento:</h3>
+            
+            <div style="display: flex; gap: 15px; margin-top: 15px;">
+              <div style="flex: 1; background: white; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #e2e8f0;">
+                <p style="margin: 0; font-size: 12px; color: #718096; font-weight: 600; text-transform: uppercase;">Anticipo (40%)</p>
+                <p style="margin: 8px 0 0; font-size: 18px; font-weight: bold; color: #c5a073;">
+                  $${anticipoMin.toLocaleString('es-AR')} - $${anticipoMax.toLocaleString('es-AR')}
+                </p>
+              </div>
+              <div style="flex: 1; background: white; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #e2e8f0;">
+                <p style="margin: 0; font-size: 12px; color: #718096; font-weight: 600; text-transform: uppercase;">12 cuotas s/interés</p>
+                <p style="margin: 8px 0 0; font-size: 18px; font-weight: bold; color: #c5a073;">
+                  $${cuotaMin.toLocaleString('es-AR')} - $${cuotaMax.toLocaleString('es-AR')}/mes
+                </p>
+              </div>
+            </div>
           </div>
+          <!-- FIN BLOQUE MODIFICADO -->
 
           <p><strong>Calidad seleccionada:</strong> ${calidad}</p>
           
@@ -94,10 +111,10 @@ export async function POST(request: Request) {
       `,
     });
 
-    // 3. Enviar notificación a tu email
+    // 3. Enviar notificación a tu email (También actualizado para no mostrar el total)
     await resend.emails.send({
       from: 'Alpinas Traslasierra <onboarding@resend.dev>',
-      to: ['alpinastraslasierra@gmail.com'], // ← CAMBIÁ ESTO POR TU EMAIL REAL
+      to: ['alpinastraslasierra@gmail.com'], 
       subject: `🔔 Nuevo lead: ${nombre} ${apellido} - ${localidad}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -113,7 +130,8 @@ export async function POST(request: Request) {
             <h3 style="color: #2d3748;">Detalles del proyecto:</h3>
             <p><strong>Superficie:</strong> ${metros} m²</p>
             <p><strong>Calidad:</strong> ${calidad}</p>
-            <p><strong>Presupuesto:</strong> $${presupuestoMinARS.toLocaleString('es-AR')} - $${presupuestoMaxARS.toLocaleString('es-AR')} ARS</p>
+            <p><strong>Anticipo (40%):</strong> $${anticipoMin.toLocaleString('es-AR')} - $${anticipoMax.toLocaleString('es-AR')} ARS</p>
+            <p><strong>12 cuotas s/interés:</strong> $${cuotaMin.toLocaleString('es-AR')} - $${cuotaMax.toLocaleString('es-AR')} ARS/mes</p>
             ${mensaje ? `<p><strong>Mensaje:</strong> ${mensaje}</p>` : ''}
           </div>
 

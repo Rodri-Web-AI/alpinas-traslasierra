@@ -15,7 +15,7 @@ const MODELS = [
           
     bedrooms: 1,
     bathrooms: 1,
-    category: "Escapadas / Inversión inicial",
+    category: "Inversión inicial",
     description:
       "Modelo compacto ideal para empezar. Perfecto para alquiler turístico. Incluye altillo y galería.",
     features: ["Altillo", "Galería cubierta", "Cocina integrada", "Baño completo"],
@@ -48,7 +48,7 @@ const MODELS = [
      ],
     bedrooms: 2,
     bathrooms: 1,
-    category: "Parejas / Alquiler turístico",
+    category: "Alquiler turístico",
     description:
       "Equilibrio perfecto entre espacio y costo. Dos dormitorios, living-comedor amplio y baño completo.",
     features: ["2 dormitorios", "Living-comedor", "Cocina separada", "Habitación lateral"],
@@ -78,7 +78,7 @@ const MODELS = [
     ],
     bedrooms: 2,
     bathrooms: 1,
-    category: "Familias / Vivienda permanente",
+    category: "Familias / Amplio",
     description:
       "Espacio amplio para vivir todo el año. Tres dormitorios, baño completo y gran living con vistas a las sierras.",
     features: ["2 dormitorios", "Living amplio", "Cocina-comedor", "Galería lateral"],
@@ -103,13 +103,13 @@ const MODELS = [
     ],
     bedrooms: 2,
     bathrooms: 2,
-    category: "Premium / Alta rentabilidad",
+    category: "Loft / Compacto",
     description:
       "Doble altura, loft superior. El modelo que más destaca por su diseño único.",
     features: ["Loft superior", "Doble altura", "2 baños"],
     image: "/images/modelos/proyecto-3.png",
     imageAlt: "Alpina Premium - 35m² con loft y doble altura",
-    bestFor: "Alquiler turístico premium o vivienda permanente",
+    bestFor: "Alquiler turístico o vivienda permanente",
     floorPlans: [
       {
         src: "/images/modelos/planos/plano4/plano-1_estructura4.png",
@@ -322,11 +322,11 @@ function ModelCard({ model, visible, index, onViewPlans }) {
     >
       <div className="group relative overflow-hidden rounded-2xl bg-white shadow-sm border border-zinc-200/50">
         {/* Badge recomendado */}
-        {model.recommended && (
-          <span className="absolute left-1/2 top-4 z-20 -translate-x-1/2 rounded-full bg-[#c5a073] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md sm:text-xs">
-            Modelo más recomendado
-          </span>
-        )}
+{model.recommended && (
+  <span className="absolute left-63 top-4 z-20 -translate-x-1/2 rounded-full bg-[#c5a073] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md sm:text-xs">
+    Modelo más recomendado
+  </span>
+)}
 
         {/* Badge de categoría */}
         <span className="absolute left-4 top-4 z-10 rounded-full border border-white/20 bg-black/35 px-3 py-1 text-[11px] font-medium tracking-wide text-white/95 backdrop-blur-sm sm:text-xs">
@@ -369,8 +369,7 @@ function ModelCard({ model, visible, index, onViewPlans }) {
       ¿Cómo funcionan los pagos?
     </span>
   </div>
-  <ul className="text-xs text-blue-800 space-y-1">
-    <li>• Precio total en USD (protege tu inversión)</li>
+  <ul className="text-xs text-blue-800 space-y-1">    
     <li>• Pagos en pesos al dólar blue del día</li>
     <li>• Cuotas fijas en USD, convertibles a pesos</li>
     <li>• Sin sorpresas: el precio que acordás es el final</li>

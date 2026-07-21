@@ -41,7 +41,7 @@ const STEPS = [
     number: "03",
     title: "Presupuesto",
     description:
-      "Trabajamos con presupuesto cerrado por contrato: el precio que acordamos es el precio final. Los pagos son progresivos por etapas cumplidas",
+      "Trabajamos con presupuesto cerrado por contrato. Los pagos son progresivos por etapas cumplidas",
     highlight: "Precio cerrado por contrato.",
     icon: DocumentIcon,
     image: {

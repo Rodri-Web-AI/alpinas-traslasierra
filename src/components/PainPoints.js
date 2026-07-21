@@ -6,13 +6,13 @@ const PAIN_POINTS = [
   {
     title: "Obras sin fecha de entrega",
     description:
-      "Empezás la construcción y nadie te puede decir cuándo vas a terminar. Los plazos se estiran indefinidamente y perdés el control de tu proyecto.",
+      "Empezás la construcción y los plazos se estiran indefinidamente y perdés el control de tu proyecto.",
     icon: ClockIcon,
   },
   {
     title: "Costos que no paran de crecer",
     description:
-      "El presupuesto inicial era una cosa, pero cada semana aparece un 'adicional' inesperado. Terminás pagando el doble de lo que te prometieron.",
+      "El presupuesto inicial se convierte en un 'adicional' nuevo inesperado cada semana. Terminás pagando el doble de lo que te prometieron.",
     icon: DollarIcon,
   },
   {
@@ -141,8 +141,8 @@ export default function PainPoints() {
             Construir en las sierras no debería ser una fuente de estrés
           </h2>
           <p className="mt-5 text-base leading-relaxed text-zinc-600 sm:text-lg">
-          El 70% de las obras en las Córdoba se atrasan más de 6 meses. 
-          Estos son los 4 problemas que más se ven y cómo nosotros lo solucionamos.
+          Un gran porcentaje de las obras en Córdoba se atrasan más de lo esperado o vienen con errores de diseño. 
+          Estos son los 4 problemas que más se ven y cómo lo solucionamos.
           </p>
         </header>
 

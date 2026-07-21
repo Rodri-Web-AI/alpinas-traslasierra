@@ -121,7 +121,7 @@ const FEATURES = [
   {
     title: "Construcción artesanal",
     description:
-      "Cada cabaña se construye a mano, con detalle y oficio. No somos una empresa de prefabricados en serie.",
+      "Cada cabaña se construye a mano. No hacemos prefabricados en serie.",
     icon: HammerIcon,
   
     details: [
@@ -140,7 +140,7 @@ const FEATURES = [
   {
     title: "Madera tratada desde el inicio",
     description:
-      "Usamos maderas con tratamiento adecuado al clima serrano: protegidas de la humedad, el viento y los cambios térmicos.",
+      "Usamos maderas con tratamiento adecuado: protegidas de la humedad, el viento y los cambios térmicos.",
     icon: TreeIcon,
   
     details: [
@@ -175,7 +175,7 @@ const FEATURES = [
   {
     title: "Adaptación al terreno",
     description:
-      "Conocemos las sierras. Diseñamos y construimos respetando la topografía y condiciones del lugar.",
+      "Construimos adaptándonos a la inclinación natural del suelo.",
     icon: MountainIcon,
   
     details: [
@@ -201,7 +201,7 @@ const FEATURES = [
   {
     title: "Personalización real",
     description:
-      "Tu cabaña no es igual a la del vecino. Trabajamos con vos el diseño, los materiales y los espacios que necesitás.",
+      "Trabajamos con vos el diseño, los materiales y los espacios que necesitás.",
     icon: SlidersIcon,
   
     details: [
@@ -524,13 +524,13 @@ export default function WhyChooseUs() {
               id="why-choose-heading"
               className="text-3xl font-bold leading-[1.15] tracking-tight text-zinc-900 sm:text-4xl lg:text-[2.65rem]"
             >
-              Tu cabaña lista en 10 a 12 semanas, con precio cerrado por contrato y fotos semanales del avance.
+              Tu cabaña lista en 10 a 12 semanas.
             </h2>
+           
 
             <p className="mt-5 text-base leading-relaxed text-zinc-600 sm:text-lg">
-            Construimos alpinas y cabañas en Traslasierra. Cada obra tiene precio cerrado por contrato, 
-            cronograma por escrito y un responsable directo que te manda fotos todos los viernes. Sin sorpresas, 
-            sin letra chica.
+            Cada obra tiene precio cerrado por contrato y aviso de avances semanales.
+            
             </p>
 
             <div className="mt-8 flex items-start gap-3 rounded-xl border border-emerald-500/10 bg-emerald-500/5 px-5 py-4">
@@ -540,7 +540,7 @@ export default function WhyChooseUs() {
               />
 
               <p className="text-sm leading-relaxed text-zinc-700 sm:text-[15px]">
-                Operamos en toda la zona serrana de Córdoba y San Luis.
+                Además de Traslasierra operamos en Valle de punilla y Norte de San Luis.
               </p>
             </div>
 

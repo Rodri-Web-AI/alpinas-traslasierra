@@ -8,7 +8,7 @@ const SECTION_HEADER = {
   title: "Alpinas Traslasierra, la mejor opción para tu futura cabaña",
   description: (
     <>
-      {"Especificamos tiempos, contratos, material de seguimiento y personalización garantizada para nuestros clientes con precios que rondan "}
+      {"Especificamos tiempos, contratos, material de seguimiento y personalización con precios que rondan "}
       <span className="font-bold text-[#c5a073] text-lg bg-[#c5a073]/10 px-2 py-0.5 rounded-md">
       Desde USD 600/m²<span className="text-sm font-normal text-zinc-500"></span>
       </span>
@@ -18,17 +18,17 @@ const SECTION_HEADER = {
 
 const ATTRIBUTES = [
   {
-    title: "Construcción 100% artesanal, pieza por pieza",
+    title: "Construcción pieza por pieza",
     description:
       "Cada cabaña se edifica en tu terreno con mano de obra propia especializada, desde la platea de hormigón hasta el último detalle de terminación. No usamos paneles prefabricados.",
   },
   {
     title: "Madera tratada antes del montaje",
     description:
-      "Trabajamos con Pino, Eucalipto y Saligna. Toda la madera recibe tratamiento con impregnantes antes de instalarse: protección contra humedad, termitas, carcomas y hongos. No es una promesa, es parte estándar del proceso. Ninguna pieza se monta sin tratamiento previo. Opción de elegir materiales como Cedro (Impacta en el costo final)",
+      "Trabajamos con Pino, Eucalipto y Saligna. Toda la madera recibe tratamiento con impregnantes antes de instalarse: protección contra humedad, termitas, carcomas y hongos. Opción de elegir materiales como Cedro (Impacta en el costo final)",
   },
   {
-    title: "Alcance regional",
+    title: "Zonas",
     description:
       "Operamos en todo el Valle de Traslasierra, Valle de Punilla y Norte de San Luis. ¿Tu localidad no está en la lista? Consultanos.",
   },

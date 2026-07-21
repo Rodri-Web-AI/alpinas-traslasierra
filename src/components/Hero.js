@@ -172,16 +172,16 @@ export default function Hero() {
               className="animate-fade-in-up text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]"
               style={{ animationDelay: "0.25s" }}
             >
-              <span className="text-zinc-900">Construimos alpinas y cabañas </span>
-              <span className="text-[#c5a073]">pensadas para disfrutar</span>
-              <span className="text-zinc-900"> las sierras de verdad.</span>
+              <span className="text-zinc-900">Construcción de cabañas alpinas en el </span>
+              <span className="text-[#c5a073]">Valle de Traslasierra</span>
+              <span className="text-zinc-900"></span>
             </h1>
 
             <p
               className="mt-6 max-w-xl animate-fade-in-up text-base leading-relaxed text-zinc-600 sm:text-lg"
               style={{ animationDelay: "0.4s" }}
             >
-              +50 cabañas entregadas en Traslasierra. Agendá tu visita a obra esta semana
+              +50 cabañas entregadas. Calcula tu presupuesto gratis y contactanos para empezar.
             </p>
 
             <div
@@ -205,7 +205,7 @@ export default function Hero() {
             className="lg:col-span-5 xl:col-span-6 flex justify-center lg:justify-end animate-fade-in-up"
             style={{ animationDelay: "0.7s" }}
           >
-            <div className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-zinc-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-200/50 aspect-[4/3] sm:aspect-[1.35/1] lg:aspect-[4/3] xl:aspect-[1.35/1]">
+            <div className="relative w-full max-w-lg overflow-hidden rounded-3xl aspect-[4/3] sm:aspect-[1.35/1] lg:aspect-[4/3] xl:aspect-[1.35/1]">
               <img 
                 src="/images/hero.png"
                 alt="Diseño exclusivo de Cabaña Alpina en Traslasierra" 
