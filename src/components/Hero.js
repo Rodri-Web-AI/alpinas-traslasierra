@@ -201,19 +201,19 @@ export default function Hero() {
             </div>
           </div>
 
-          <div 
-            className="lg:col-span-5 xl:col-span-6 flex justify-center lg:justify-end animate-fade-in-up"
-            style={{ animationDelay: "0.7s" }}
-          >
-            <div className="relative w-full max-w-lg overflow-hidden rounded-3xl aspect-[4/3] sm:aspect-[1.35/1] lg:aspect-[4/3] xl:aspect-[1.35/1]">
-              <img 
-                src="/images/hero.png"
-                alt="Diseño exclusivo de Cabaña Alpina en Traslasierra" 
-                className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
-                loading="eager"
-              />
-            </div>
-          </div>
+          <div className="lg:col-span-5 xl:col-span-6 flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: "0.7s" }} > 
+  <div className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-zinc-100 aspect-video"> 
+    <video autoPlay loop muted playsInline poster="/images/hero.png" className="h-full w-full object-cover object-center" preload="auto" > 
+      <source src="/images/animation.webm" type="video/webm" /> 
+      {/* Fallback para navegadores que no soportan WebM */} 
+      <img src="/images/hero.png" alt="Diseño exclusivo de Cabaña Alpina en Traslasierra" className="h-full w-full object-cover object-center" /> 
+    </video> 
+  </div> 
+</div>
+
+
+
+
 
         </div>
       </div>
