@@ -380,9 +380,8 @@ export default function BudgetCalculator() {
                     <div className="rounded-lg bg-emerald-50 border border-emerald-200 p-4 text-sm text-emerald-800">
                       <p className="font-semibold">📐 Resumen de tu proyecto:</p>
                       <p className="mt-2">{formData.metros} m² · {CALIDAD_OPTIONS.find(c => c.id === formData.calidad)?.label}</p>
-                      <p className="mt-1 text-xs">
-                        Presupuesto estimado: ${priceRangeARS.min.toLocaleString("es-AR")} - ${priceRangeARS.max.toLocaleString("es-AR")} ARS
-                      </p>
+                      {/* <p className="mt-1 text-xs"> Presupuesto estimado: ${priceRangeARS.min.toLocaleString("es-AR")} - ${priceRangeARS.max.toLocaleString("es-AR")} ARS </p> */}
+
                     </div>
 
                     <div className="grid gap-4 sm:grid-cols-2">
