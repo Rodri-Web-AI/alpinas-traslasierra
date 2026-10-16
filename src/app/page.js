@@ -19,7 +19,7 @@ export default function Home() {
       <WhyChooseUs />
       <Process />
       <ObrasReales />
-      <Projects />
+      {/*<Projects />*/}
       {/* <EnObra /> */}
       <BudgetCalculator /> {/* ← Agregalo acá */}
       <QuienesSomos />
