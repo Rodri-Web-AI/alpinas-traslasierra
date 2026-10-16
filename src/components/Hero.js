@@ -193,11 +193,7 @@ export default function Hero() {
   label="Calcular mi presupuesto gratis"
   className="inline-flex items-center justify-center gap-2.5 rounded-full bg-emerald-800 px-7 py-3.5 text-sm font-medium text-white shadow-md shadow-emerald-800/10 transition-all hover:bg-emerald-900 hover:scale-[1.01]"
 />
-              <NavLink
-                href="#proyectos"
-                label="Ver proyectos"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-7 py-3.5 text-sm font-medium text-zinc-700 shadow-sm transition-colors hover:border-zinc-400 hover:bg-zinc-50 hover:text-zinc-900"
-              />
+              
             </div>
           </div>
 
