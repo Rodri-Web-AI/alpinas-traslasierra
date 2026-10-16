@@ -476,7 +476,7 @@ export default function BudgetCalculator() {
                             setEmailSuggestions(getEmailSuggestions(formData.email));
                           }
                         }}
-                        placeholder="Ej: juan"
+                        placeholder="Ej: juan@gmail.com"
                         className="w-full rounded-xl border-2 border-zinc-200 px-4 py-3 text-sm transition-all focus:border-[#c5a073] focus:outline-none focus:ring-2 focus:ring-[#c5a073]/10"
                         required
                         autoComplete="email"
